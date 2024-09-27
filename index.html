@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BINDHUSHREE DRY CLEANERS</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <div class="main">
+      <div class="name">
+        <h1>BINDHUSHREE DRY CLEANERS</h1>
+      </div>
+      <div class="form-container">
+        <h2>BILL GENERATOR</h2>
+        <select name="Department" id="dept" onchange="showClothes()">
+          <option value="">Select Department</option>
+          <option value="Dept 1">Dept 1</option>
+          <option value="Dept 2">Dept 2</option>
+          <option value="Dept 3">Dept 3</option>
+          <option value="Dept 4">Dept 4</option>
+          <option value="Dept 5">Dept 5</option>
+        </select>
+
+        <ol class="cloths-dept1" id="cloths-dept1" style="display: none;">
+          <li class="wp">White pant</li>
+          <input type="number" id="wp-qty" placeholder="Quantity">
+          <li class="ws">White shirt</li>
+          <input type="number" id="ws-qty" placeholder="Quantity">
+          <li class="wc">White cap</li>
+          <input type="number" id="wc-qty" placeholder="Quantity">
+          <li class="wgc">White & Gray coat</li>
+          <input type="number" id="wgc-qty" placeholder="Quantity">
+          <li class="sd">Secondary dress</li>
+          <input type="number" id="sd-qty" placeholder="Quantity">
+          <li class="sc">Secondary Cap</li>
+          <input type="number" id="sc-qty" placeholder="Quantity">
+          <li class="bb">Big Bag</li>
+          <input type="number" id="bb-qty" placeholder="Quantity">
+        </ol>
+
+        <button onclick="generateBill()">Add to Bill</button>
+        <button class="clear" onclick="clearData()">Clear</button>
+      </div>
+      
+      <div id="bill-table" class="bill-container" style="margin-top: 20px;">
+        <h2>Generated Bill</h2>
+        <table border="1" width="100%" style="text-align: left;">
+          <thead>
+            <tr>
+              <th>Sl. No.</th>
+              <th>Department</th>
+              <th>Particulars</th>
+              <th>Quantity</th>
+              <th>Amount</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody id="bill-body">
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="5" style="text-align: right;">Grand Total:</td>
+              <td id="grand-total">0</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
